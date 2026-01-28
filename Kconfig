@@ -6,7 +6,7 @@ RTT_DIR := rt-thread
 
 PKGS_DIR := packages
 
-config SOC_STM32H723ZG
+config SOC_STM32H723VG
     bool
     select SOC_SERIES_STM32H7
     select RT_USING_COMPONENTS_INIT
