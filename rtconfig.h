@@ -1,7 +1,7 @@
 #ifndef RT_CONFIG_H__
 #define RT_CONFIG_H__
 
-#define SOC_STM32H723ZG
+#define SOC_STM32H723VG
 #define BOARD_STM32H723_NUCLEO
 
 /* RT-Thread Kernel */
@@ -85,6 +85,7 @@
 #define RT_DEBUGING_ASSERT
 #define RT_DEBUGING_COLOR
 #define RT_DEBUGING_CONTEXT
+#define RT_DEBUGING_AUTO_INIT
 
 /* Inter-Thread communication */
 
@@ -105,7 +106,7 @@
 #define RT_USING_DEVICE
 #define RT_USING_CONSOLE
 #define RT_CONSOLEBUF_SIZE 128
-#define RT_CONSOLE_DEVICE_NAME "uart3"
+#define RT_CONSOLE_DEVICE_NAME "uart7"
 #define RT_VER_NUM 0x50300
 #define RT_BACKTRACE_LEVEL_MAX_NR 32
 /* end of RT-Thread Kernel */
@@ -148,11 +149,6 @@
 #define DFS_FILESYSTEM_TYPES_MAX 4
 #define RT_USING_DFS_DEVFS
 /* end of DFS: device virtual file system */
-#define RT_USING_FAL
-#define FAL_USING_DEBUG
-#define FAL_PART_HAS_TABLE_CFG
-#define FAL_DEV_NAME_MAX 24
-#define FAL_DEV_BLK_MAX 6
 
 /* Device Drivers */
 
@@ -454,7 +450,9 @@
 #define BSP_USING_GPIO
 #define BSP_USING_UART
 #define BSP_STM32_UART_V1_TX_TIMEOUT 6000
-#define BSP_USING_UART3
+#define BSP_USING_UART7
+#define BSP_UART7_RX_USING_DMA
+#define BSP_UART7_TX_USING_DMA
 /* end of On-chip Peripheral Drivers */
 
 /* Board extended module Drivers */

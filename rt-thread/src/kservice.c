@@ -149,17 +149,46 @@ rt_weak const char *rt_hw_cpu_arch(void)
  */
 void rt_show_version(void)
 {
-    rt_kprintf("\n \\ | /\n");
+//     rt_kprintf("\n \\ | /\n");
+// #if defined(RT_USING_SMART)
+//     rt_kprintf("- RT -     Thread Smart Operating System\n");
+// #elif defined(RT_USING_NANO)
+//     rt_kprintf("- RT -     Thread Nano Operating System\n");
+// #else
+//     rt_kprintf("- RT -     Thread Operating System\n");
+// #endif
+//     rt_kprintf(" / | \\     %d.%d.%d build %s %s\n",
+//                (rt_int32_t)RT_VERSION_MAJOR, (rt_int32_t)RT_VERSION_MINOR, (rt_int32_t)RT_VERSION_PATCH, __DATE__, __TIME__);
+//     rt_kprintf(" 2006 - 2024 Copyright by RT-Thread team\n");
+
+    rt_kprintf("\n");
+    rt_kprintf("  ██████╗ ██╗   ██╗███████╗████████╗\n");
+    rt_kprintf("  ██╔══██╗██║   ██║██╔════╝╚══██╔══╝\n");
+    rt_kprintf("  ██║  ██║██║   ██║███████╗   ██║   \n");
+    rt_kprintf("  ██║  ██║██║   ██║╚════██║   ██║   \n");
+    rt_kprintf("  ██████╔╝╚██████╔╝███████║   ██║   \n");
+    rt_kprintf("  ╚═════╝  ╚═════╝ ╚══════╝   ╚═╝   \n");
+
+    rt_kprintf("\n");
+    rt_kprintf("     Dust Infantry Robot Platform\n");
+    rt_kprintf("     Powered by RT-Thread RTOS\n\n");
+
 #if defined(RT_USING_SMART)
-    rt_kprintf("- RT -     Thread Smart Operating System\n");
+    rt_kprintf("  OS   : RT-Thread Smart\n");
 #elif defined(RT_USING_NANO)
-    rt_kprintf("- RT -     Thread Nano Operating System\n");
+    rt_kprintf("  OS   : RT-Thread Nano\n");
 #else
-    rt_kprintf("- RT -     Thread Operating System\n");
+    rt_kprintf("  OS   : RT-Thread\n");
 #endif
-    rt_kprintf(" / | \\     %d.%d.%d build %s %s\n",
-               (rt_int32_t)RT_VERSION_MAJOR, (rt_int32_t)RT_VERSION_MINOR, (rt_int32_t)RT_VERSION_PATCH, __DATE__, __TIME__);
-    rt_kprintf(" 2006 - 2024 Copyright by RT-Thread team\n");
+
+    rt_kprintf("  Ver  : %d.%d.%d\n",
+               RT_VERSION_MAJOR,
+               RT_VERSION_MINOR,
+               RT_VERSION_PATCH);
+
+    rt_kprintf("  Build: %s %s\n", __DATE__, __TIME__);
+    rt_kprintf("  CPU  : Cortex-M7\n");
+    rt_kprintf("\n");
 }
 RTM_EXPORT(rt_show_version);
 

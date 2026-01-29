@@ -20,16 +20,26 @@
 
 /* Includes ------------------------------------------------------------------*/
 #include "main.h"
+// #include "usb_device.h"
 /* USER CODE BEGIN Includes */
 
 /* USER CODE END Includes */
-extern DMA_HandleTypeDef hdma_uart7_tx;
+FDCAN_HandleTypeDef hfdcan1;
+FDCAN_HandleTypeDef hfdcan2;
+FDCAN_HandleTypeDef hfdcan3;
 
-extern DMA_HandleTypeDef hdma_uart7_rx;
+SPI_HandleTypeDef hspi2;
 
-extern DMA_HandleTypeDef hdma_usart1_rx;
+TIM_HandleTypeDef htim1;
+TIM_HandleTypeDef htim3;
 
-extern DMA_HandleTypeDef hdma_usart1_tx;
+UART_HandleTypeDef huart7;
+UART_HandleTypeDef huart1;
+UART_HandleTypeDef huart10;
+DMA_HandleTypeDef hdma_uart7_tx;
+DMA_HandleTypeDef hdma_uart7_rx;
+DMA_HandleTypeDef hdma_usart1_rx;
+DMA_HandleTypeDef hdma_usart1_tx;
 
 /* Private typedef -----------------------------------------------------------*/
 /* USER CODE BEGIN TD */
@@ -62,7 +72,20 @@ extern DMA_HandleTypeDef hdma_usart1_tx;
 /* USER CODE END ExternalFunctions */
 
 /* USER CODE BEGIN 0 */
-
+/**
+  * @brief  This function is executed in case of error occurrence.
+  * @retval None
+  */
+void Error_Handler(void)
+{
+  /* USER CODE BEGIN Error_Handler_Debug */
+  /* User can add his own implementation to report the HAL error return state */
+  __disable_irq();
+  while (1)
+  {
+  }
+  /* USER CODE END Error_Handler_Debug */
+}
 /* USER CODE END 0 */
 
 void HAL_TIM_MspPostInit(TIM_HandleTypeDef *htim);

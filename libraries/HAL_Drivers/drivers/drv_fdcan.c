@@ -697,6 +697,7 @@ static int rt_hw_can_init(void)
 #endif /* BSP_USING_FDCAN2 */
     return 0;
 }
+
 INIT_BOARD_EXPORT(rt_hw_can_init);
 
 #endif /* BSP_USING_FDCAN1 || BSP_USING_FDCAN2 */
